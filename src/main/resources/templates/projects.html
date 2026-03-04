@@ -1,0 +1,71 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dự án</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  <body>
+    <!-- HEADER giống 2 trang kia -->
+    <div class="header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-3 text-center text-md-start">
+            <img th:src="@{/images/avatar.jpg}" class="avatar" />
+          </div>
+
+          <div class="col-md-9">
+            <h4 th:text="${name} + ' - ' + ${age} + ' tuổi'"></h4>
+            <p>🎓 <span th:text="${school}"></span></p>
+            <p>
+              📧 <span th:text="${email}"></span> | 📞
+              <span th:text="${phone}"></span>
+            </p>
+            <p>📍 <span th:text="${address}"></span></p>
+            <p>
+              📘
+              <a
+                th:href="${facebook}"
+                target="_blank"
+                class="text-white text-decoration-none"
+              >
+                Facebook
+              </a>
+              | 💬
+              <a
+                th:href="${zalo}"
+                target="_blank"
+                class="text-white text-decoration-none"
+              >
+                Zalo
+              </a>
+            </p>
+            <div class="mt-2">
+              <a href="/" class="nav-btn">Trang chủ</a>
+              <a href="/skills" class="nav-btn">Kỹ năng</a>
+              <a href="/projects" class="nav-btn">Dự án</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="container mt-5">
+      <div class="card p-4 mb-3">
+        <h5>Website Quản lý bán hoa quả</h5>
+        <p>Spring Boot + MySQL + Thymeleaf</p>
+      </div>
+
+      <div class="card p-4">
+        <h5>Hệ thống IoT ESP32 gửi dữ liệu Firebase</h5>
+        <p>ESP32 + REST API + Firebase</p>
+      </div>
+    </div>
+  </body>
+</html>
